@@ -7,9 +7,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         Path dirPath = null;
         while (dirPath == null) {
-            Scanner scanner = new Scanner(System.in);
             System.out.print("Input directory path to check: ");
             Path path = Paths.get(scanner.nextLine());
             if (Files.isDirectory(path)) {
