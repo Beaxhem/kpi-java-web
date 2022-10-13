@@ -14,6 +14,7 @@ public class Main {
             Path path = Paths.get(scanner.nextLine());
             if (Files.isDirectory(path)) {
                 dirPath = path;
+                System.out.println("Searching through " + path.toString());
             } else {
                 System.out.println("The path is not a directory. Please try again");
             }

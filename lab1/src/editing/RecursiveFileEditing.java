@@ -17,6 +17,7 @@ public class RecursiveFileEditing implements Runnable {
     public void run() {
         try (Stream<Path> stream = Files.list(directory)) {
             stream.forEach(file -> {
+                System.out.println("Checking file: " + file.toString());
                 if (file.toString().endsWith(".java")) {
                     new Thread(new DefaultFileEditStrategy(file)).start();
                     return;

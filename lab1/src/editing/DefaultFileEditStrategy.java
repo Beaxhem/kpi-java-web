@@ -12,7 +12,7 @@ public class DefaultFileEditStrategy implements FileEditStrategy {
 
     @Override
     public void edit(Path path) {
-        System.out.println(path);
+        System.out.println("Found .java file: " + path);
         new FileReplace(path, "public", "protected").replace();
     }
 

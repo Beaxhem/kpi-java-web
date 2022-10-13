@@ -16,7 +16,7 @@ public class FileReplace {
         this.replacement = replacement;
     }
 
-    protected void replace() {
+    public void replace() {
         try {
             List<String> lines = new ArrayList<String>();
             String line;
@@ -24,8 +24,11 @@ public class FileReplace {
             FileReader reader = new FileReader(file);
             BufferedReader bufReader = new BufferedReader(reader);
             while ((line = bufReader.readLine()) != null) {
-                if (line.contains(target))
-                    line = line.replace(target, replacement);
+                if (line.contains(target)) {
+                    String replacedLine = line.replace(target, replacement);
+                    System.out.println("Replacing '" + line.toString() + "' with '" + replacedLine + "' in file: " + path);
+                    line = replacedLine;
+                }
                 lines.add(line);
             }
             reader.close();
